@@ -1,0 +1,43 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+TODO LIST FOR LUKES PORTFOLIO!
+/////////////////////////////////////////////////////////////////////////////////////////////////
+-------------------------------------------------
+                    URGENT:
+-------------------------------------------------
+TODO: fix problem with static pages not actually sending and just reloading themselves.... <<<<<<<<
+-------------------------------------------------
+                     NOW:
+-------------------------------------------------
+TODO: ensure password match on registration form
+TODO: Add Account Settings
+TODO: Add Code examples section
+--TODO: Create some neat widgets
+--TODO: Javascript Calender from scratch
+--TODO: Photo Gallery of CG stuff??? ???
+--TODO: Built in compiler??? ???
+--TODO: Live stock tracker with graphic 
+--TODO: Remake tips tracker
+
+
+TODO: get dropdowns to collapse on sidebar collapse
+TODO: integrate server responses to fill content of pages
+TODO: integrate login into main page
+TODO: change login and registration to slide in pages
+
+DONE: Fix Logout to truly return to base, remove logout from URL
+-------------------------------------------------
+                    FUTURE:
+-------------------------------------------------
+TODO: Revisite login security
+TODO: Get rid of all external dependencies
+--index.html
+----<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+----<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+-------------------------------------------------
+                DONE-TENTATIVE:
+-------------------------------------------------
+DONE: Build side bar
+DONE: Build Registration html/css
+DONE: Build Registration back-end
+DONE: Add error messaging to failed login attempts

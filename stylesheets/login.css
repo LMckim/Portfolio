@@ -1,0 +1,16 @@
+#login-form{
+    margin: auto;
+    padding-top: 100px;
+    
+}
+#register-form{
+    position: absolute;
+    top: 9%;
+    left: 25%;
+}
+#return-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
