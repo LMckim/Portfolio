@@ -25,6 +25,9 @@ ul ul a{
     right: 20px;
     transform: translateY(-50%);
 }
+.dropdown-form-index{
+    width:300px;
+}
 .side-nav-icon{
     margin-left: 20px;
     padding-right: 10px;

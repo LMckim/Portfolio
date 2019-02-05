@@ -14,6 +14,14 @@ if(isset($_SESSION['id']))
 {
     $param['loggedIn'] = true;
 }else{
+
+    if(isset($_POST['login']))
+    {
+        profGen_log("whoopie!");
+    }
+    profGen_log("whoopsie!");
+    profGen_log(extract($_POST));
+
     $param['loggedIn'] = false;
 }
 $page = $builder->buildPage($param);
