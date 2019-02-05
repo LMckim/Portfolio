@@ -18,7 +18,7 @@ ul ul a{
     width: 100%;
     align-items: stretch;
 }
-.dropdown-toggle::after{
+.dropdown-toggle:after{
     display: block;
     position: absolute;
     top: 50%;
