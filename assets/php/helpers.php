@@ -20,12 +20,13 @@ function profSpec_log($filepath,$msg)
 
     if(is_array($msg))
     {
-        file_put_contents($filepath,"[".$date . "] ",FILE_APPEND);
+        file_put_contents($filepath,"[" .$date . "] ",FILE_APPEND);
         file_put_contents($filepath,print_r($msg,true),FILE_APPEND);
         file_put_contents($filepath,"\n",FILE_APPEND);
     }else{
         file_put_contents($filepath,"[" . $date . "] " . $msg.="\n",FILE_APPEND);
     } 
 }
+
 
 ?>
