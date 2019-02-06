@@ -78,6 +78,7 @@ $(document).ready(function()
         });
     });
     // handles all registration stuff
+    // TODO: set this up to only be included if not logged in
     $("#reg-submit").on('click',function(){
 
         var uname;

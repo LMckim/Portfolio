@@ -4,7 +4,8 @@ class pageBuilder
 {
     public function buildPage($param)
     {
-        $header = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/header.html');
+        $user = $param['user'];
+        $header = $this->buildNavBar()
 
         $loggedIn = $param['loggedIn'];
         $navbar = $this->buildNavBar($loggedIn);
@@ -16,6 +17,20 @@ class pageBuilder
 
         return($page);
     }
+    private function buildHeader($user)
+    {
+        $header = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/header.html');
+        $title = "Lukes Portfolio";
+        if($user == 1)
+        {
+            $title = 'Administrator';
+        }
+        // this will be used for our own templating engine, well pull this function out later
+        $len = strlen('{{Title}}');
+        $insertionPoint = strpos($header,'{{Title}}');
+        $header = substr_replace($header,$title,$insertionPoint);
+        return $header;
+    }
 
     private function buildNavBar($loggedIn)
     {
@@ -24,7 +39,7 @@ class pageBuilder
         {
             $accountOptions = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/elements/AccountOptions_LoggedIn.html');
             $len = strlen('Account-Options');
-            $insertionPoint = strpos($navbar,'Account-Options') + $len + 2;
+            $insertionPoint = strpos($navbar,'Account-Options') + $len + 2; // +2 to get past the "> in the html
             $navbar = substr_replace($navbar,$accountOptions,$insertionPoint,0);
             return $navbar;
 
