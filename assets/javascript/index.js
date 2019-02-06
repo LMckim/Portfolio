@@ -1,30 +1,57 @@
 $(document).ready(function()
 {
     // handles sidebar
-    $('#sidebar').toggleClass('active');
-    $("#sidebar").mCustomScrollbar(
-    {
-        theme: "minimal"
-    });
+    $('#sidebar').toggleClass('active'); // close on load
 
-    $("#sidebarToggle").on('click',function()
-    {
-        // open or close navbar
-        if($('#sidebar').hasClass('active')){
-            $('#sidebar').toggleClass('active');
-        }else{
-            $('#sidebar').toggleClass('active');
-        }
-    });
+    // closes everything when sidebar is shrunk
     $(".sidebar-btn").on('click',function(){
         if($('#sidebar').hasClass('active')){
             $('#sidebar').toggleClass('active');
         }
     });
-    $("#tips-tracker").on('click',function(){
-        $.get("index.php?tips-tracker");
+    $("#sidebarToggle").on('click',function()
+    {
+        // if sidebar is active (closed) then open it up
+        if($('#sidebar').hasClass('active'))
+        {
+            $('#sidebar').removeClass('active');           
+            // otherwise close it and all sub menus
+        }else{
+            $('#sidebar').addClass('active');
+            // home dropdown
+            $('#homeSubMenu-a').addClass('collapsed');
+            $('#homeSubMenu-a').attr('aria-expanded','false'); 
+            $('#homeSubMenu-ul').removeClass('show');
+            // projects dropdown
+            $('#projectSubMenu-a').addClass('collapsed');
+            $('#projectSubMenu-a').attr('aria-expanded','false'); 
+            $('#projectSubMenu-ul').removeClass('show');
+        }
     });
-
+    // handles sub menus
+    $('#homeSubMenu-a').on('click',function(){
+        if($('#homeSubMenu-a').hasClass('collapsed')){
+            $('#homeSubMenu-a').removeClass('collapsed');
+            $('#homeSubMenu-a').attr('aria-expanded','true'); 
+            $('#homeSubMenu-ul').addClass('show') 
+        }else{
+            $('#homeSubMenu-a').addClass('collapsed');
+            $('#homeSubMenu-a').attr('aria-expanded','false'); 
+            $('#homeSubMenu-ul').removeClass('show')
+        }
+    });
+    $('#projectSubMenu-a').on('click',function(){
+        if($('#projectSubMenu-a').hasClass('collapsed')){
+            $('#projectSubMenu-a').removeClass('collapsed');
+            $('#projectSubMenu-a').attr('aria-expanded','true'); 
+            $('#projectSubMenu-ul').addClass('show') 
+        }else{
+            $('#projectSubMenu-a').addClass('collapsed');
+            $('#projectSubMenu-a').attr('aria-expanded','false'); 
+            $('#projectSubMenu-ul').removeClass('show')
+        }
+    });
+    
     // handles all sign in stuff
     $("#sign-in-submit").on('click',function(){
 
