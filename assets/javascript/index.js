@@ -26,8 +26,16 @@ $(document).ready(function()
     $("#sign-in-submit").on('click',function(){
         var uname = $('#sign-in')[0][0].value;
         var pass = $('#sign-in')[0][1].value;
-        var subUrl = "index.php?login" + '?' + uname + '?' + pass;
-        $.post(subUrl);
+
+        $.ajax({
+            url: 'http://portfolio.com:8083/index.php',
+            method:'post',
+            data: JSON.stringify({'uname':uname, 'pass':pass}),
+            contentType : 'application/json'
+        })
+
+      //  var subUrl = "index.php?login" + 'uname=' + uname + '&pass=' + pass;
+      //  $.post(subUrl);
     })
 
 });

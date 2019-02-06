@@ -19,8 +19,10 @@ if(isset($_SESSION['id']))
     {
         profGen_log("whoopie!");
     }
-    profGen_log("whoopsie!");
+    $_POST = json_decode(file_get_contents('php://input'), true);
     profGen_log(extract($_POST));
+    profGen_log($_SERVER);
+    profGen_log($_POST);
 
     $param['loggedIn'] = false;
 }
