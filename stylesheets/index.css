@@ -117,4 +117,7 @@ ul ul a{
     #nav-title{
         display: none;
     }
+    #sidebar.active{
+        display: none;
+    }
 }

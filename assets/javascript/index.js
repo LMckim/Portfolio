@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+    // handles sidebar
+    $('#sidebar').toggleClass('active');
     $("#sidebar").mCustomScrollbar(
     {
         theme: "minimal"
@@ -23,19 +25,61 @@ $(document).ready(function()
         $.get("index.php?tips-tracker");
     });
 
+    // handles all sign in stuff
     $("#sign-in-submit").on('click',function(){
-        var uname = $('#sign-in')[0][0].value;
-        var pass = $('#sign-in')[0][1].value;
 
+        var uname;
+        if($('#sign-in-uname').val() != "" ){
+            uname = $('#sign-in-uname').val();
+        }else{
+            // popper about uname field
+        }
+        var pass;
+        if($('#sign-in-pass').val() != ""){
+            pass = $('#sign-in-pass').val();
+        }else{
+            // popper about both pass fields
+        }
+        var Nurl = document.URL + "index.php?";
         $.ajax({
-            url: 'http://portfolio.com:8083/index.php',
+            url: Nurl,
             method:'post',
-            data: JSON.stringify({'uname':uname, 'pass':pass}),
+            data: JSON.stringify({'action':'login','uname':uname, 'pass':pass}),
             contentType : 'application/json'
-        })
+        });
+    });
+    // handles all registration stuff
+    $("#reg-submit").on('click',function(){
 
-      //  var subUrl = "index.php?login" + 'uname=' + uname + '&pass=' + pass;
-      //  $.post(subUrl);
-    })
+        var uname;
+        if($('#reg-uname').val() != "" ){
+            uname = $('#reg-uname').val();
+        }else{
+            // popper about uname field
+        }
+        var pass;
+        if($('#reg-pass').val() != "" && $('#reg-pass-c').val() != ""){
+            if($('#reg-pass') !== $('#reg-pass-c').val())
+            {
+                // popper about different passwords
+            }else{
+                pass = $('#reg-pass').val();
+            }
+        }else{
+            // popper about both pass fields
+        }
+        var email;
+        if($('#reg-email').val() != ""){
+            // check email against regex
+            email = $('#reg-email').val();
+        }
+        var Nurl = document.URL + "index.php?";
+        $.ajax({
+            url: Nurl,
+            method:'post',
+            data: JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}),
+            contentType : 'application/json'
+        });
+    });
 
 });

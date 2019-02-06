@@ -13,16 +13,19 @@ $builder  = new pageBuilder();
 if(isset($_SESSION['id']))
 {
     $param['loggedIn'] = true;
+
 }else{
 
-    if(isset($_POST['login']))
+    $json = json_decode(file_get_contents('php://input'), true);
+
+    if($json['action'] == 'login')
     {
-        profGen_log("whoopie!");
+        include_once($_SERVER['DOCUMENT_ROOT'].'/assets/php/user_actions/login.php');
+    }elseif($json['action'] == 'register'){
+        include_once($_SERVER['DOCUMENT_ROOT'].'/assets/php/user_actions/register.php');
     }
-    $_POST = json_decode(file_get_contents('php://input'), true);
-    profGen_log(extract($_POST));
+    profGen_log($json);
     profGen_log($_SERVER);
-    profGen_log($_POST);
 
     $param['loggedIn'] = false;
 }
