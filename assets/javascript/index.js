@@ -1,6 +1,8 @@
 $(document).ready(function()
-{
-    // handles sidebar
+{   
+    //-----------------------------------------------------------------------
+    //                      ::SIDEBAR HANDLER::
+    //-----------------------------------------------------------------------
     $('#sidebar').toggleClass('active'); // close on load
 
     // closes everything when sidebar is shrunk
@@ -51,8 +53,11 @@ $(document).ready(function()
             $('#projectSubMenu-ul').removeClass('show')
         }
     });
-    
+    // TODO: set this up to only be included if not logged in
     // handles all sign in stuff
+    //-----------------------------------------------------------------------
+    //                      ::LOGGED OUT HANDLER::
+    //-----------------------------------------------------------------------
     $("#sign-in-submit").on('click',function(){
 
         var uname;
@@ -78,7 +83,6 @@ $(document).ready(function()
         });
     });
     // handles all registration stuff
-    // TODO: set this up to only be included if not logged in
     $("#reg-submit").on('click',function(){
 
         var uname;
@@ -137,6 +141,26 @@ $(document).ready(function()
                 async: false
             });
         }
+    });
+    //-----------------------------------------------------------------------
+    //                      ::LOGGED IN HANDLER::
+    //-----------------------------------------------------------------------
+    $('#account-btn').on('click',function(){
+        // gonna need to create an account options either sidebar or dropdown
+            // Options:
+                // change password
+                // change email
+                // edit information
+        console.log('hello :D');
+    });
+    $('#logout-btn').on('click',function(){
+        $.ajax({
+            url: Nurl,
+            method: 'GET',
+            data: JSON.stringify({'action':'logout'}),
+            contentType : 'application/json',
+            async: false
+        });
     });
 
 });

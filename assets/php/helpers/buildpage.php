@@ -5,7 +5,7 @@ class pageBuilder
     public function buildPage($param)
     {
         $user = $param['user'];
-        $header = $this->buildNavBar()
+        $header = $this->buildHeader($user);
 
         $loggedIn = $param['loggedIn'];
         $navbar = $this->buildNavBar($loggedIn);
@@ -28,7 +28,7 @@ class pageBuilder
         // this will be used for our own templating engine, well pull this function out later
         $len = strlen('{{Title}}');
         $insertionPoint = strpos($header,'{{Title}}');
-        $header = substr_replace($header,$title,$insertionPoint);
+        $header = substr_replace($header,$title,$insertionPoint,$len);
         return $header;
     }
 

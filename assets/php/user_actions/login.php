@@ -15,20 +15,20 @@ if(!empty($userName) && !empty($password))
     // check username exists
     if(!$result->num_rows > 0)
     {
-        $msg = "Unsuccesful login attempt using username = " .$u_name.;
+        $msg = "Unsuccesful login attempt using username = " . $u_name;
         profSpec_log($logpath,$msg);
         $msg = "Login failed, either username or password are incorrect.";
         $error = array('status'=>'error','message'=>$msg);
         echo(json_encode($error));
         exit();
     }else{
-        $arr = $result->mysqli_fetch_array(MYSQLI_ASSOC);
-        $pass = $arr['user_password'];
+        $arr = $result->fetch_array(MYSQLI_ASSOC);
+        $hash = $arr['user_password'];
 
         include_once($_SERVER['DOCUMENT_ROOT'].'/external/Security/PBKDF2.php');
         $checker = new PasswordStorage();
         // verify password
-        if($checker->verify_password($pass) == true)
+        if($checker->verify_password($password,$hash) == true)
         {   
             $sql = "UPDATE `users` SET `logged_in`='y' WHERE   `user_name`='$u_name'";
             if($conn->query($sql))

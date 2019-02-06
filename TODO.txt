@@ -4,11 +4,10 @@ TODO LIST FOR LUKES PORTFOLIO!
 -------------------------------------------------
                     URGENT:
 -------------------------------------------------
-TODO: fix problem with static pages not actually sending and just reloading themselves.... <<<<<<<<
+TODO: fix problem with static pages not actually sending and just reloading themselves.... <<<<<<<< still not sure about this
 -------------------------------------------------
                      NOW:
 -------------------------------------------------
-TODO: ensure password match on registration form
 TODO: Add Account Settings
 TODO: Add Code examples section
 --TODO: Create some neat widgets
@@ -37,6 +36,7 @@ TODO: Get rid of all external dependencies
 -------------------------------------------------
                 DONE-TENTATIVE:
 -------------------------------------------------
+DONE: ensure password match on registration form
 DONE: Build side bar
 DONE: Build Registration html/css
 DONE: Build Registration back-end
