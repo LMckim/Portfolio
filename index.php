@@ -13,7 +13,7 @@ if($json['action'] == 'login')
 {
     // once logged in $_SESSION['id'] is set to user id
     include_once($_SERVER['DOCUMENT_ROOT'].'/assets/php/user_actions/login.php');
-    
+
 }elseif($json['action'] == 'register'){
     include_once($_SERVER['DOCUMENT_ROOT'].'/assets/php/user_actions/register.php');
 }

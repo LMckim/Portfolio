@@ -132,7 +132,7 @@ $(document).ready(function()
         // need to put in failed registration messages here
         // handle login with new user_id
         if(result.user_id > 0){
-            var Nurl = document.url + "index.php?";
+            var Nurl = document.URL + "index.php?";
             var postR = $.ajax({
                 url: Nurl,
                 method: 'POST',
@@ -154,6 +154,7 @@ $(document).ready(function()
         console.log('hello :D');
     });
     $('#logout-btn').on('click',function(){
+        var Nurl = document.URL + "index.php?";
         $.ajax({
             url: Nurl,
             method: 'GET',

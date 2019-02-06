@@ -30,7 +30,7 @@ if(!empty($userName) && !empty($password))
         // verify password
         if($checker->verify_password($password,$hash) == true)
         {   
-            $sql = "UPDATE `users` SET `logged_in`='y' WHERE   `user_name`='$u_name'";
+            $sql = "UPDATE `users` SET `logged_in`='y' WHERE `user_name`='$u_name'";
             if($conn->query($sql))
             {
                 // handle logging

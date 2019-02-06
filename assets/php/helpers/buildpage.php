@@ -23,7 +23,7 @@ class pageBuilder
         $title = "Lukes Portfolio";
         if($user == 1)
         {
-            $title = 'Administrator';
+            $title = 'Portfolio Administrator';
         }
         // this will be used for our own templating engine, well pull this function out later
         $len = strlen('{{Title}}');
