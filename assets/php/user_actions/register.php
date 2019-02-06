@@ -14,12 +14,15 @@ if(empty($userName) || empty($password) || empty($email))
     echo($result);
     // exits form if an error is found
     exit();
+}else{
+    $u_name = $conn->real_escape_string($userName);
+    $u_pass = hash('sha256',$conn->real_escape_string($password));
+    $u_email = $conn->real_escape_string($email);
+
+    
+
 }
 
-// set up for safety
-$u_name = $conn->real_escape_string($userName);
-$u_pass = hash('sha256',$conn->real_escape_string($password));
-$u_email = $conn->real_escape_string($email);
 
 
 

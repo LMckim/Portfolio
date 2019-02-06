@@ -24,8 +24,7 @@ if(isset($_SESSION['id']))
     }elseif($json['action'] == 'register'){
         include_once($_SERVER['DOCUMENT_ROOT'].'/assets/php/user_actions/register.php');
     }
-    profGen_log($json);
-    profGen_log($_SERVER);
+
 
     $param['loggedIn'] = false;
 }

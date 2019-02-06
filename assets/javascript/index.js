@@ -59,13 +59,15 @@ $(document).ready(function()
         if($('#sign-in-uname').val() != "" ){
             uname = $('#sign-in-uname').val();
         }else{
-            // popper about uname field
+            $('#sign-in-uname').attr('placeholder','You need a User Name');
+            return;
         }
         var pass;
         if($('#sign-in-pass').val() != ""){
             pass = $('#sign-in-pass').val();
         }else{
-            // popper about both pass fields
+            $('#sign-in-').attr('placeholder','You need a Password');
+            return;
         }
         var Nurl = document.URL + "index.php?";
         $.ajax({
@@ -82,31 +84,54 @@ $(document).ready(function()
         if($('#reg-uname').val() != "" ){
             uname = $('#reg-uname').val();
         }else{
-            // popper about uname field
+            $('#reg-uname').attr('placeholder','You need a User Name');
+            return;
         }
         var pass;
         if($('#reg-pass').val() != "" && $('#reg-pass-c').val() != ""){
-            if($('#reg-pass') !== $('#reg-pass-c').val())
+            if($('#reg-pass').val() !== $('#reg-pass-c').val())
             {
-                // popper about different passwords
+                $('#reg-pass').attr('placeholder','You need a Password');
+                return;
             }else{
                 pass = $('#reg-pass').val();
             }
         }else{
-            // popper about both pass fields
+            $('#reg-pass').attr('placeholder','Fill out both passwords');
+            return;
         }
         var email;
         if($('#reg-email').val() != ""){
             // check email against regex
-            email = $('#reg-email').val();
+            var temp = validateEmail($('#reg-email').val());
+            if(temp == true){
+                email = $('#reg-email').val();
+            }else{
+                $('#reg-email').attr('placeholder','Invalid Email');
+                return;
+            }
+
+        }else{
+            $('#reg-email').attr('placeholder','Enter an email');
+            return;
         }
         var Nurl = document.URL + "index.php?";
-        $.ajax({
+        var response = $.ajax({
             url: Nurl,
             method:'post',
             data: JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}),
             contentType : 'application/json'
         });
+        console.log(response);
+        var r = $.post(Nurl,JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}),function(){
+            console.log('yes');
+        });
+        console.log(r);
     });
 
 });
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
