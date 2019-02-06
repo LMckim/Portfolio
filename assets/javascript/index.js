@@ -116,17 +116,12 @@ $(document).ready(function()
             return;
         }
         var Nurl = document.URL + "index.php?";
-        var response = $.ajax({
-            url: Nurl,
-            method:'post',
-            data: JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}),
-            contentType : 'application/json'
-        });
-        console.log(response);
-        var r = $.post(Nurl,JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}),function(){
-            console.log('yes');
-        });
-        console.log(r);
+        var result = $.post(Nurl,JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}));
+        if(result['user_id'] > 0){
+            console.log('yippee');
+            var u_id = result['user_id'];
+            console.log(u_id);
+        }
     });
 
 });
