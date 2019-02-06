@@ -116,11 +116,25 @@ $(document).ready(function()
             return;
         }
         var Nurl = document.URL + "index.php?";
-        var result = $.post(Nurl,JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}));
-        if(result['user_id'] > 0){
-            console.log('yippee');
-            var u_id = result['user_id'];
-            console.log(u_id);
+        var postR = $.ajax({
+            url: Nurl,
+            method:'POST',
+            data: JSON.stringify({'action':'register','uname': uname, 'pass': pass, 'email': email}),
+            contentType : 'application/json',
+            async:false
+        });
+        var result = JSON.parse(postR.responseText);
+        // need to put in failed registration messages here
+        // handle login with new user_id
+        if(result.user_id > 0){
+            var Nurl = document.url + "index.php?";
+            var postR = $.ajax({
+                url: Nurl,
+                method: 'POST',
+                data: JSON.stringify({'action':'login','uname': uname, 'pass': pass}),
+                contentType : 'application/json',
+                async: false
+            });
         }
     });
 

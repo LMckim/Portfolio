@@ -1,5 +1,5 @@
 <?php
-
+// need to look into phpmyadmin error, everything is working correctly however
 // import values from array to be used as variables
 $logpath = $_SERVER['DOCUMENT_ROOT'].'/logs/login.log';
 
