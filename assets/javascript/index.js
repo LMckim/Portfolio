@@ -1,12 +1,21 @@
 $(document).ready(function()
 {   
+    // intial filling of content and return to home
+    getContentPost('landing',function(data){
+        $('#content').html(data);
+    });
+    $('#nav-title').on('click',function(){
+        getContentPost('landing',function(data){
+            $('#content').html(data);
+        });
+    });
     //-----------------------------------------------------------------------
     //                      ::SIDEBAR HANDLER::
     //-----------------------------------------------------------------------
     $('#sidebar').toggleClass('active'); // close on load
 
     // closes everything when sidebar is shrunk
-    $(".sidebar-btn").on('click',function(){
+    $(".sidebar-drop-btn").on('click',function(){
         if($('#sidebar').hasClass('active')){
             $('#sidebar').toggleClass('active');
         }
@@ -16,8 +25,10 @@ $(document).ready(function()
         // if sidebar is active (closed) then open it up
         if($('#sidebar').hasClass('active'))
         {
-            $('#sidebar').removeClass('active');           
-            // otherwise close it and all sub menus
+            $('#sidebar').removeClass('active');    
+            // shuffle content over when bar is opened
+            $('#content').css('margin-left','250px');       
+        // otherwise close it and all sub menus
         }else{
             $('#sidebar').addClass('active');
             // home dropdown
@@ -28,6 +39,8 @@ $(document).ready(function()
             $('#projectSubMenu-a').addClass('collapsed');
             $('#projectSubMenu-a').attr('aria-expanded','false'); 
             $('#projectSubMenu-ul').removeClass('show');
+            // shuffle content back when bar is closed
+            $('#content').css('margin-left','80px');
         }
     });
     // handles sub menus
@@ -54,10 +67,9 @@ $(document).ready(function()
         }
     });
     $('#about-btn').on('click',function(){
-         getContentPost('about',function(data){
-            $('#content').append(data);
-            console.log(data);
-         });
+        getContentPost('about',function(data){
+            $('#content').html(data);
+    });
     
     });
     // TODO: set this up to only be included if not logged in
@@ -178,7 +190,6 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     //                      ::CONTENT HANDLER::
     //-----------------------------------------------------------------------
-
 });
 
 function validateEmail(email) {

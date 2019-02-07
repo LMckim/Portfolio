@@ -1,0 +1,8 @@
+My name is Luke Mckim and I am an aspiring developer from Toronto, Ontatio.
+        I began coding in September 2017 when I was trying to leanr how to make a game.
+        I quickly learned that I loved programming and decided to invest most of my free
+        time into learning. Over the next few months I completed Harvards CS50 course, which   
+        taught me an enormous amount and left me with a thirst for more. I was then lucky enough
+        to find myself in the position to attend an internship as OmegaATS, a financial tech 
+        company in Toronto, where I learned more about web development as well as setting up,
+        maintaining and using Linux environments. 

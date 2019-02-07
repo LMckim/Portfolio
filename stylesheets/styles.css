@@ -28,12 +28,33 @@ ul ul a{
 .dropdown-form-index{
     width:300px;
 }
-
 /* Content */
-#content{
-    margin-left: 120px;
+/* Classes*/
+.content-text{
+    min-height: 100vh;
+    margin-top: 3rem;
+}
+.content-text a{
+    text-decoration: underline;
+    text-decoration-color: blue;
+    color: blue;
 }
 
+/* id's*/
+#content{
+    margin-left: 120px;
+    margin-top: 60px;
+    min-height: 100vh;
+}
+    /* Landing page */
+    #landing{
+        background-image: url('../images/toronto.jpg');
+        color: #cccccc;
+    }
+    #landing .content-text{
+        color: darkslategray
+    }
+/* NAV BAR*/
 
 /* SIDE BAR */
 /* Classes */
