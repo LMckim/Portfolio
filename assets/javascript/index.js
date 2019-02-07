@@ -58,6 +58,7 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     //                      ::LOGGED OUT HANDLER::
     //-----------------------------------------------------------------------
+    // handles signing in
     $("#sign-in-submit").on('click',function(){
 
         var uname;
@@ -81,6 +82,7 @@ $(document).ready(function()
             data: JSON.stringify({'action':'login','uname':uname, 'pass':pass}),
             contentType : 'application/json'
         });
+        location.reload();
     });
     // handles all registration stuff
     $("#reg-submit").on('click',function(){
@@ -140,6 +142,7 @@ $(document).ready(function()
                 contentType : 'application/json',
                 async: false
             });
+            location.reload();
         }
     });
     //-----------------------------------------------------------------------
@@ -154,15 +157,16 @@ $(document).ready(function()
         console.log('hello :D');
     });
     $('#logout-btn').on('click',function(){
-        var Nurl = document.URL + "index.php";
+        var Nurl = document.URL + "index.php?";
         
         var postR = $.ajax({
             url: Nurl,
-            method: 'GET',
+            method: 'POST',
             data: JSON.stringify({'action':'logout'}),
             contentType : 'application/json',
             async: false
         });
+        location.reload();
         
       //$('#Account-Options').load(Nurl,JSON.stringify({'action':'logout'}));
     });

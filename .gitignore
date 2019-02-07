@@ -1,4 +1,6 @@
 .vscode
-external/
-/logs/
+external/jQuery
+external/bootstrap
 stylesheets/fonts
+!/Security/PBKDF2.php
+

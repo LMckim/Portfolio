@@ -6,7 +6,7 @@ profGen_log($json);
 if($json['action'] == 'logout')
 {
     $sql = "UPDATE `users` SET `logged_in`='n' WHERE `user_name`='$u_name'";
-    if($conn-query($sql))
+    if($conn->query($sql))
     {
         $logpath = $_SERVER['DOCUMENT_ROOT'].'/logs/login.log';
         $msg = "Succesful logout by user id " . $_SESSION['id'];
@@ -30,6 +30,7 @@ $param['loggedIn'] = true;
 $param['user'] = $_SESSION['id'];
 $page = $builder->buildPage($param);
 print($page);
+// session_destroy();
 
 
 
