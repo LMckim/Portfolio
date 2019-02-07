@@ -154,14 +154,17 @@ $(document).ready(function()
         console.log('hello :D');
     });
     $('#logout-btn').on('click',function(){
-        var Nurl = document.URL + "index.php?";
-        $.ajax({
+        var Nurl = document.URL + "index.php";
+        
+        var postR = $.ajax({
             url: Nurl,
             method: 'GET',
             data: JSON.stringify({'action':'logout'}),
             contentType : 'application/json',
             async: false
         });
+        
+      //$('#Account-Options').load(Nurl,JSON.stringify({'action':'logout'}));
     });
 
 });

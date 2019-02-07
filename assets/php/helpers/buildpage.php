@@ -51,5 +51,12 @@ class pageBuilder
             return $navbar;
         }
     }
+
+    public function grabElement($param)
+    {
+        $req = $param['element'];
+        $element  = file_get_contents($_SESSIOM['DOCUMENT_ROOT'].'pages/elements/'.$req);
+        return $element;
+    }
 }
 ?>

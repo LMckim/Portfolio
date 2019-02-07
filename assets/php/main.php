@@ -1,6 +1,8 @@
 <?php
 // setup for building the page
 
+// lets put this into a switch statement later
+profGen_log($json);
 if($json['action'] == 'logout')
 {
     $sql = "UPDATE `users` SET `logged_in`='n' WHERE `user_name`='$u_name'";
@@ -15,11 +17,11 @@ if($json['action'] == 'logout')
         profSpec_log($logpath,$msg);
     }
 
-    $param['loggedIn'] = false;
-    $page = $builder->buildPage($param);
-    print($page);
+    $param['element'] = 'AccountOptions_Default.html';
+    print($builder->grabElement($param)); // is this going to cause issues????
     session_destroy();
-}
+    exit();
+}  
 
 
 
