@@ -54,7 +54,11 @@ $(document).ready(function()
         }
     });
     $('#about-btn').on('click',function(){
-        var aboutContent = getContentPost('about');
+         getContentPost('about',function(data){
+            $('#content').append(data);
+            console.log(data);
+         });
+    
     });
     // TODO: set this up to only be included if not logged in
     // handles all sign in stuff
@@ -181,13 +185,14 @@ function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-function getContentPost(content,sync = false){
+function getContentPost(content,func,sync = true){
     var Nurl = document.URL + "index.php?";
     $.ajax({
         url:Nurl,
         method: 'POST',
         data: JSON.stringify({'action':'content','toGet':content}),
         contentType : 'application/json',
-        async: sync
+        async: sync,
+        success: func
     });
 }

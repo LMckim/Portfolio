@@ -4,19 +4,38 @@ class pageBuilder
 {
     public function buildPage($param)
     {
+        $elements = array();
+
         $user = $param['user'];
         $header = $this->buildHeader($user);
+        $elements[] = $header;
 
         $loggedIn = $param['loggedIn'];
         $navbar = $this->buildNavBar($loggedIn);
+        $elements[] = $navbar;
 
         $sidebar = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/sideBar.html');
+        $elements[] = $sidebar;
 
-        $content = $this->buildContent($param);
+        /* May deprecate this
+        if($param['content'])
+        {
+            $content = $this->buildContent($param['content']);
+            $elements[] = $content;
+        }
+        */
+        $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content.html');
+        $elements[] = $content;
 
         $footer  = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/footer.html');
+        $elements[] = $footer;
 
-        $page = $header . $navbar . $sidebar . $footer;
+        $page = "";
+        foreach($elements as $element)
+        {
+            $page .= $element;
+        }
+        profGen_log($page);
 
         return($page);
     }
@@ -55,16 +74,32 @@ class pageBuilder
         }
     }
 
-    private function buildContent($param)
+    /* May deprecate this
+    private function buildContent($file)
     {
-        $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content.html');
+        $base = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content.html');
+        $html = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content/' . $file . '.html');
+        $content = $this->htmlInsert($base,'content',$html);
+        return $content;
+    }
+    */
+
+    private function htmlInsert($file,$id,$html)
+    {
+        $len = strlen($id);
+        $insertionPoint = strpos($file,$id) + $len + 2; // +2 to get past the "> in the html
+        $newFile = substr_replace($file,$html,$insertionPoint,0);
+        return $newFile;
     }
 
+    // possibly deprecated, may become its own class
+    /* 
     public function grabElement($param)
     {
         $req = $param['element'];
         $element  = file_get_contents($_SESSIOM['DOCUMENT_ROOT'].'pages/elements/'. $req);
         return $element;
     }
+    */
 }
 ?>

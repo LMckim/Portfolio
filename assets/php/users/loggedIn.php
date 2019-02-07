@@ -15,9 +15,6 @@ if($json['action'] == 'logout')
         $msg = "Could not log out user id " . $_SESSION['id'];
         profSpec_log($logpath,$msg);
     }
-
-    $param['element'] = 'AccountOptions_Default.html';
-    print($builder->grabElement($param)); // is this going to cause issues????
     session_destroy();
     exit();
 }  

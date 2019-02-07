@@ -1,6 +1,5 @@
 .vscode
-external/jQuery
-external/bootstrap
+external
 stylesheets/fonts
-!/Security/PBKDF2.php
+
 
