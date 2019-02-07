@@ -11,6 +11,9 @@ class pageBuilder
         $navbar = $this->buildNavBar($loggedIn);
 
         $sidebar = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/sideBar.html');
+
+        $content = $this->buildContent($param);
+
         $footer  = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/footer.html');
 
         $page = $header . $navbar . $sidebar . $footer;
@@ -50,6 +53,11 @@ class pageBuilder
             $navbar = substr_replace($navbar,$accountOptions,$insertionPoint,0);
             return $navbar;
         }
+    }
+
+    private function buildContent($param)
+    {
+        $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content.html');
     }
 
     public function grabElement($param)

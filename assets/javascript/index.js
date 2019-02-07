@@ -53,6 +53,9 @@ $(document).ready(function()
             $('#projectSubMenu-ul').removeClass('show')
         }
     });
+    $('#about-btn').on('click',function(){
+        var aboutContent = getContentPost('about');
+    });
     // TODO: set this up to only be included if not logged in
     // handles all sign in stuff
     //-----------------------------------------------------------------------
@@ -167,13 +170,24 @@ $(document).ready(function()
             async: false
         });
         location.reload();
-        
-      //$('#Account-Options').load(Nurl,JSON.stringify({'action':'logout'}));
     });
+    //-----------------------------------------------------------------------
+    //                      ::CONTENT HANDLER::
+    //-----------------------------------------------------------------------
 
 });
 
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+}
+function getContentPost(content,sync = false){
+    var Nurl = document.URL + "index.php?";
+    $.ajax({
+        url:Nurl,
+        method: 'POST',
+        data: JSON.stringify({'action':'content','toGet':content}),
+        contentType : 'application/json',
+        async: sync
+    });
 }
