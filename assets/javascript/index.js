@@ -19,6 +19,7 @@ $(document).ready(function()
         if($('#sidebar').hasClass('active')){
             $('#sidebar').toggleClass('active');
         }
+        contentSizeCheck();
     });
     $("#sidebarToggle").on('click',function()
     {
@@ -27,7 +28,7 @@ $(document).ready(function()
         {
             $('#sidebar').removeClass('active');    
             // shuffle content over when bar is opened
-            $('#content').css('margin-left','250px');       
+            contentSizeCheck();       
         // otherwise close it and all sub menus
         }else{
             $('#sidebar').addClass('active');
@@ -40,7 +41,7 @@ $(document).ready(function()
             $('#projectSubMenu-a').attr('aria-expanded','false'); 
             $('#projectSubMenu-ul').removeClass('show');
             // shuffle content back when bar is closed
-            $('#content').css('margin-left','80px');
+            contentSizeCheck();
         }
     });
     // handles sub menus
@@ -54,6 +55,7 @@ $(document).ready(function()
             $('#homeSubMenu-a').attr('aria-expanded','false'); 
             $('#homeSubMenu-ul').removeClass('show')
         }
+        contentSizeCheck();
     });
     $('#projectSubMenu-a').on('click',function(){
         if($('#projectSubMenu-a').hasClass('collapsed')){
@@ -65,6 +67,7 @@ $(document).ready(function()
             $('#projectSubMenu-a').attr('aria-expanded','false'); 
             $('#projectSubMenu-ul').removeClass('show')
         }
+        contentSizeCheck();
     });
     $('#about-btn').on('click',function(){
         getContentPost('about',function(data){
@@ -206,4 +209,20 @@ function getContentPost(content,func,sync = true){
         async: sync,
         success: func
     });
+}
+function contentSizeCheck(){
+    if($('#sidebar').hasClass('active'))
+    {
+        $('#content').css('margin-left','80px');
+    }else if($('#sidebar').css('display') == 'none'){
+        $('#content').css('margin-left','0px');
+    }else{
+        $('#content').css('margin-left','250px');
+    }
+}
+function slideElement(start,finish){
+    for(var i=0; i<finish; i++)
+    {
+        
+    }
 }

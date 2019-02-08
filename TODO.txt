@@ -2,14 +2,20 @@
 TODO LIST FOR LUKES PORTFOLIO!
 /////////////////////////////////////////////////////////////////////////////////////////////////
 -------------------------------------------------
+                     BUGS:
+-------------------------------------------------
+FIXED::Navbar doesn't properly resize with all actions
+-Sign-in and login dont properly scale
+-------------------------------------------------
                     URGENT:
 -------------------------------------------------
 TODO: fix problem with static pages not actually sending and just reloading themselves.... <<<<<<<< still not sure about this
 -------------------------------------------------
                      NOW:
 -------------------------------------------------
+TODO: Look into reducing fontawesome
 TODO: Add Account Settings
-TODO: Investigate and Fix MySQL type error
+TODO: Investigate and Fix MySQL type error <<<<<<<<<<
 TODO: Add Code examples section
 --TODO: Create some neat widgets
 --TODO: Javascript Calender from scratch

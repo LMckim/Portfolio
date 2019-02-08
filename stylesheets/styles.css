@@ -32,7 +32,9 @@ ul ul a{
 /* Classes*/
 .content-text{
     min-height: 100vh;
-    margin-top: 3rem;
+    margin-top: 7rem;
+    margin-left: 4rem;
+    margin-right: 16rem;
 }
 .content-text a{
     text-decoration: underline;
@@ -42,20 +44,33 @@ ul ul a{
 
 /* id's*/
 #content{
-    margin-left: 120px;
+    margin-left: 80px;
     margin-top: 60px;
     min-height: 100vh;
 }
     /* Landing page */
     #landing{
-        background-image: url('../images/toronto.jpg');
         color: #cccccc;
     }
     #landing .content-text{
-        color: darkslategray
+        color:black;
+        width: 60%;     
+    }
+    /* About */
+    #about-img{
+        width:25%;
+        border-radius: 25px;
+        margin-left: 2rem;
+        float: left;
+        margin-right: 3em;
     }
 /* NAV BAR*/
-
+#top-nav{
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
 /* SIDE BAR */
 /* Classes */
 .side-nav-icon{
