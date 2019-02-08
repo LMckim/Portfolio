@@ -17,13 +17,6 @@ class pageBuilder
         $sidebar = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/sideBar.html');
         $elements[] = $sidebar;
 
-        /* May deprecate this
-        if($param['content'])
-        {
-            $content = $this->buildContent($param['content']);
-            $elements[] = $content;
-        }
-        */
         $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content.html');
         $elements[] = $content;
 
@@ -73,33 +66,27 @@ class pageBuilder
             return $navbar;
         }
     }
-
-    /* May deprecate this
-    private function buildContent($file)
+    /* this also may be useless.... sigh
+    private function buildFooter($param)
     {
-        $base = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content.html');
-        $html = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content/' . $file . '.html');
-        $content = $this->htmlInsert($base,'content',$html);
-        return $content;
+        $footer = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/footer.html');
+        $id = '<!-- External Scripts -->';
+        $scriptInsert = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/apis/' . $script . '.html');
+        $newFooter = htmlInsert($footer,$id,$scriptInsert,false);
+        return $newFooter;
     }
     */
 
-    private function htmlInsert($file,$id,$html)
+    private function htmlInsert($file,$id,$html,$div = true)
     {
         $len = strlen($id);
-        $insertionPoint = strpos($file,$id) + $len + 2; // +2 to get past the "> in the html
+        $insertionPoint = strpos($file,$id) + $len;
+        if($div == true)
+        {
+            $insertionPoint + 2; // +2 to get past the "> in the html
+        }
         $newFile = substr_replace($file,$html,$insertionPoint,0);
         return $newFile;
     }
-
-    // possibly deprecated, may become its own class
-    /* 
-    public function grabElement($param)
-    {
-        $req = $param['element'];
-        $element  = file_get_contents($_SESSIOM['DOCUMENT_ROOT'].'pages/elements/'. $req);
-        return $element;
-    }
-    */
 }
 ?>

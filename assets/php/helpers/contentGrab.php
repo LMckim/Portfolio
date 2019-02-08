@@ -7,6 +7,11 @@ class contentGrabber
         $content = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content/' . $content . '.html');
         return $content;
     }
+    public function grabScript($script)
+    {
+        $script = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/pages/content/' . $script . '.html');
+        return $script;
+    }
 }
 
 ?>

@@ -9,6 +9,9 @@ $(document).ready(function()
             $('#content').html(data);
         });
     });
+    $(window).resize(function(){
+        contentSizeCheck();
+    });
     //-----------------------------------------------------------------------
     //                      ::SIDEBAR HANDLER::
     //-----------------------------------------------------------------------
@@ -69,11 +72,19 @@ $(document).ready(function()
         }
         contentSizeCheck();
     });
+    // grabs projects
+    $('#tips-tracker-btn').on('click',function(){
+        getContentPost('tips-tracker',function(data){
+            $('#content').html(data);
+        });
+    })
+ 
+    // gotta work here
+    
     $('#about-btn').on('click',function(){
         getContentPost('about',function(data){
             $('#content').html(data);
-    });
-    
+        });
     });
     // TODO: set this up to only be included if not logged in
     // handles all sign in stuff
@@ -193,6 +204,13 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     //                      ::CONTENT HANDLER::
     //-----------------------------------------------------------------------
+    var map;
+    function initMap(){
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.387, lng: 150.644},
+            zoom: 8
+        });
+    }
 });
 
 function validateEmail(email) {
@@ -210,12 +228,23 @@ function getContentPost(content,func,sync = true){
         success: func
     });
 }
+function getScriptPost(script,func,sync = true){
+    var Nurl = document.URL + "index.php?";
+    $.ajax({
+        url:Nurl,
+        method: 'POST',
+        data: JSON.stringify({'action':'api','toGet':script}),
+        contentType : 'application/json',
+        async: sync,
+        success: func
+    });
+}
 function contentSizeCheck(){
-    if($('#sidebar').hasClass('active'))
+    if($('#sidebar').css('display') == 'none')
     {
-        $('#content').css('margin-left','80px');
-    }else if($('#sidebar').css('display') == 'none'){
         $('#content').css('margin-left','0px');
+    }else if($('#sidebar').hasClass('active')){
+        $('#content').css('margin-left','80px');
     }else{
         $('#content').css('margin-left','250px');
     }

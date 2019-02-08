@@ -64,6 +64,10 @@ ul ul a{
         float: left;
         margin-right: 3em;
     }
+    /* Maps */
+    #map{
+        height: 100%;
+    }
 /* NAV BAR*/
 #top-nav{
     position: fixed;
