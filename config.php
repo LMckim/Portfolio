@@ -3,6 +3,8 @@
 $conn = new mysqli('localhost','portfolio','MZtBPtYajvv0UCGW','portfolio');
 if($conn->connect_errno)
 {
-    echo "ERROR: ". $conn->connection_error;
+    $logpath = $_SERVER['DOCUMENT_ROOT'].'/logs/error.log';
+    $msg = "Server could not be connected to";
+    profSpec_Log($logpath,$msg);
 }
 ?>
