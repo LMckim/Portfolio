@@ -1,5 +1,6 @@
 $(document).ready(function()
 {   
+    var loadedScripts = [];
     // intial filling of content and return to home
     getContentPost('landing',function(data){
         $('#content').html(data);
@@ -77,7 +78,28 @@ $(document).ready(function()
         getContentPost('tips-tracker',function(data){
             $('#content').html(data);
         });
-    })
+    });
+    $('#maps-btn').on('click',function(){
+        // if the scripts already loaded dont load it again
+        if(loadedScripts.includes('googlemaps')){
+            getContentPost('maps',function(data){
+                $('#content').html(data);
+                initMap();
+            });
+
+        }else{
+            loadedScripts.push('googlemaps');
+            getScriptPost('GoogleMaps',function(data){
+                $.getScript(data,function(){
+                    getContentPost('maps',function(data){
+                        $('#content').html(data);
+                        initMap();
+                    });
+                });
+            });
+        }
+
+    });
  
     // gotta work here
     
@@ -213,6 +235,8 @@ $(document).ready(function()
     }
 });
 
+// custom functions
+
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -233,8 +257,8 @@ function getScriptPost(script,func,sync = true){
     $.ajax({
         url:Nurl,
         method: 'POST',
-        data: JSON.stringify({'action':'api','toGet':script}),
-        contentType : 'application/json',
+        data: JSON.stringify({'action':'script','toGet':script}),
+        datatype: "script",
         async: sync,
         success: func
     });
@@ -249,9 +273,10 @@ function contentSizeCheck(){
         $('#content').css('margin-left','250px');
     }
 }
-function slideElement(start,finish){
-    for(var i=0; i<finish; i++)
-    {
-        
-    }
+function initMap(){
+    var latlng = new google.maps.LatLng(43.6532,79.3832);
+    map = new google.maps.Map(document.getElementById('map'),{
+        center: latlng,
+        zoom: 8
+    });
 }
