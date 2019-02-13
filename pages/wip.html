@@ -29,17 +29,51 @@
             </a>
         </div>
         <div id="nav-right">
-            <!-- Signed In -->
-            <i class="fa fa-user-circle fa-2x"></i>
-            <button id="account-btn" class="dropdown-btn" data-toggle="account-dropdown">
+            <button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown">
+                Sign In
             </button>
-            <div id="account-dropdown" class="dropdown-menu">
-                <ul>
-                    <li>Sign In</li>
-                    <li>Register</li>
-                </ul>
+            <div id="signin-dropdown" class="dropdown-menu">
+                Sign In
+                <form id="sign-in">
+                    <div class="form-input">
+                            <label for="userName">User Name : </label>
+                            <input id="sign-in-uname" type="text" placeholder="User Name">
+                        </div>
+                        <div class="form-input">
+                            <label for="password">Password : </label>
+                            <input id="sign-in-pass" type="password" placeholder="Password">
+                        </div>
+                        <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+                </form>
             </div>
-        </div>
+            <button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown">
+                Register
+            </button>
+            <div id="register-dropdown" class="dropdown-menu">
+                Register
+                <form id="register">
+                    <div class="form-input">
+                        <label for="userName">User Name :</label>
+                        <input id="reg-uname" type="text" placeholder="Username">
+                    </div>
+                    <div class="form-input">
+                        <label for="password">Password</label>
+                        <input id="reg-pass" type="password" placeholder="Password">
+                    </div>
+                    <div class="form-input">
+                        <label for="password">Confirm Password</label>
+                        <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+                    </div>
+                    <div class="form-input">
+                        <label for="email">Email</label>
+                        <input id="reg-email" type="email" placeholder="Email">
+                    </div>
+                    <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+                </form>
+
+            </div>
+            
+            </div>
 
         </div>
     </nav>

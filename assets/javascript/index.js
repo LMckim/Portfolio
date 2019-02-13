@@ -21,7 +21,7 @@ $(document).ready(function()
         element = '#' + element;
 
         var target = '#' + $(element).data('toggle');
-        console.log(target);
+
 
         if($(target).css('visibility') == 'visible'){
             $(target).css('visibility','hidden');

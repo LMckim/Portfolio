@@ -1,0 +1,4 @@
+.btn-reg: styles button regularly
+
+
+.dropdown-btn: use data-toggle to assign a dropdown menu div id
