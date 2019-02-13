@@ -1,3 +1,17 @@
+/* Media Querys */
+@media (max-width: 768px){
+    #sidebar .dropdown-toggle:after{
+        content: none;
+    }
+}
+@media (max-width: 480px){
+    #nav-title{
+        display: none;
+    }
+    #sidebar.active{
+        display: none;
+    }
+}
 /* Basic Elements */
 a[data-toggle="collapse"]{
     position: relative;
@@ -140,17 +154,3 @@ ul ul a{
         color: #fff;
         background: #6d7fcc;
     }
-/* Media Querys */
-@media (max-width: 768px){
-    #sidebar .dropdown-toggle:after{
-        content: none;
-    }
-}
-@media (max-width: 480px){
-    #nav-title{
-        display: none;
-    }
-    #sidebar.active{
-        display: none;
-    }
-}
