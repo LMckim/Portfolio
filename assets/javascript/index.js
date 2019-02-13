@@ -14,6 +14,24 @@ $(document).ready(function()
         contentSizeCheck();
     });
     //-----------------------------------------------------------------------
+    //                       ::NAVBAR HANDLER::
+    //-----------------------------------------------------------------------
+    $('.dropdown-btn').on('click',function(event){
+        var element = event.target.id;
+        element = '#' + element;
+
+        var target = '#' + $(element).data('toggle');
+        console.log(target);
+
+        if($(target).css('visibility') == 'visible'){
+            $(target).css('visibility','hidden');
+        }else{
+            $(target).css('visibility','visible');
+        }
+        
+    });
+    
+    //-----------------------------------------------------------------------
     //                      ::SIDEBAR HANDLER::
     //-----------------------------------------------------------------------
     $('#sidebar').toggleClass('active'); // close on load
@@ -280,4 +298,3 @@ function initMap(){
         zoom: 8
     });
 }
-
