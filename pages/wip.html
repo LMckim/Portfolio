@@ -29,59 +29,41 @@
             </a>
         </div>
         <div id="nav-right">
-            <button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
-                Sign In
-            </button>
-            <div id="signin-dropdown" class="dropdown-menu">
-                Sign In
-                <form id="sign-in">
-                    <div class="form-input">
-                            <label for="userName">User Name : </label>
-                            <input id="sign-in-uname" type="text" placeholder="User Name">
-                        </div>
-                        <div class="form-input">
-                            <label for="password">Password : </label>
-                            <input id="sign-in-pass" type="password" placeholder="Password">
-                        </div>
-                        <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
-                </form>
             </div>
-            <button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
-                Register
-            </button>
-            <div id="register-dropdown" class="dropdown-menu">
-                Register
-                <form id="register">
-                    <div class="form-input">
-                        <label for="userName">User Name :</label>
-                        <input id="reg-uname" type="text" placeholder="Username">
-                    </div>
-                    <div class="form-input">
-                        <label for="password">Password</label>
-                        <input id="reg-pass" type="password" placeholder="Password">
-                    </div>
-                    <div class="form-input">
-                        <label for="password">Confirm Password</label>
-                        <input id="reg-pass-c" type="password" placeholder="Confirm Password">
-                    </div>
-                    <div class="form-input">
-                        <label for="email">Email</label>
-                        <input id="reg-email" type="email" placeholder="Email">
-                    </div>
-                    <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
-                </form>
-
-            </div>
-            
-            </div>
-
         </div>
     </nav>
+    <div id="side-nav" class="wrapper">
+        <!-- SideBar -->
+        <nav id="sidebar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+                <div id="projects-dropdown" class="dropdown-side">
+                    <ul>
+                        <li class="side-btn">
+                            <a href="#">Tips Tracker</a>
+                        </li>
+                        <li class="side-btn"> 
+                            <a href="#">Maps API</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="aside-about" class="side-btn side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div>
     <!--    Scripts    -->
     <script src="../external/jQuery/jquery-3.3.1.min.js"></script>
 
     <!-- Custom Scripts -->
     <script src="../assets/javascript/index.js"></script>
-    <script src="../stylesheets/javascript/dropdown.js"></script>
 </body>
 </html>
