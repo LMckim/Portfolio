@@ -16,20 +16,8 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     //                       ::NAVBAR HANDLER::
     //-----------------------------------------------------------------------
-    $('.dropdown-btn').on('click',function(event){
-        var element = event.target.id;
-        element = '#' + element;
-
-        var target = '#' + $(element).data('toggle');
-
-
-        if($(target).css('visibility') == 'visible'){
-            $(target).css('visibility','hidden');
-        }else{
-            $(target).css('visibility','visible');
-        }
-        
-    });
+    // sign-in and register dropdowns
+    controlDropdown('.dropdown-btn');
     
     //-----------------------------------------------------------------------
     //                      ::SIDEBAR HANDLER::
@@ -298,3 +286,34 @@ function initMap(){
         zoom: 8
     });
 }
+function controlDropdown(obj){
+    $(obj).on('click',function(event){
+        // retrieve clicked elements id
+        var element = '#' + event.target.id;
+        // get the id of the data-toggle parameter
+        var target = '#' + $(element).data('toggle');
+        // check through data-group and close any open
+        if($(element).data('group') != null){
+            // get each element with selector
+            $(obj).each(function(){
+                // if not the element we clicked on
+                if('#' + this.id != element){
+                    // get the data-toggle target
+                    var target = '#' + $(this).data('toggle');
+                    if($(target).css('visibility') == 'visible'){
+                        $(target).css('visibility','hidden');
+                    }
+                }
+            });
+        }
+        // make this visible or close if already visible
+        if($(target).css('visibility') == 'visible'){
+            $(target).css('visibility','hidden');
+        }else{
+            $(target).css('visibility','visible');
+        }
+        
+    });
+}
+
+//# sourceURL=index.js
