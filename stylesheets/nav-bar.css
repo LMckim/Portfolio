@@ -143,6 +143,19 @@
     border-top-width: 2px;
     border-top-color: rgb(34, 34, 44); 
 }
+.side-sub-btn{
+    display: none;
+
+    position: static;
+
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border-top:solid;
+    border-top-width: 2px;
+    border-top-color: rgb(34, 34, 44); 
+}
 
 .side-btn-bottom{
     border-bottom:solid;
@@ -152,8 +165,9 @@
 }
 .side-btn:hover{
     background-color: rgb(56, 56, 73); 
+    cursor: pointer;
 }
-.side-btn i{
+#sidebar i{
     color: white;
     float: left;
     padding-left: 15px;

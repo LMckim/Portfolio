@@ -31,6 +31,7 @@ $(document).ready(function()
         }
         contentSizeCheck();
     });
+    /
     $("#sidebarToggle").on('click',function()
     {
         // if sidebar is active (closed) then open it up

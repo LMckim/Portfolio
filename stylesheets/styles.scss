@@ -1,0 +1,177 @@
+/* Nav Bar */
+#nav-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: black;
+    color: white;
+
+    height: 50px;
+    width: 100%;
+    #nav-img{
+        margin: 10px;
+     }
+    a{
+         text-decoration: none;
+         color: white;
+     }
+     #nav-brand-text{
+         position: relative;
+         bottom:20px;
+         margin: 10px;
+         font-size: 120%;
+         text-decoration: none;
+     }
+     #nav-btn{
+         position: relative;
+         bottom: 22px;
+         margin: 10px;
+     
+         border: 0;
+         background: none;
+         
+         color: white;
+     }
+     #nav-right{
+         position: fixed;
+         top:10px;
+         right: 15px;
+     }
+     #account-btn{
+     
+         position: absolute;
+         top:0;
+         right:0px;
+         padding: 15px;
+         
+         border-radius: 50px;
+         border: 0;
+         background: none
+     }
+     .dropdown-menu{
+        position: fixed;
+        right: 0;
+    
+        padding-right: 20px;
+    
+        visibility: hidden;
+    
+        border: solid;
+        border-width: 1px;
+        border-color: black;
+        border-radius: 5px;
+        color: black;
+        background-color: white;
+    
+        text-align: center;
+    
+        ul li{
+            list-style-type: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        ul li a{
+            color: black !important;
+        }
+        .form-input{
+            margin: 5px;
+            border: 0
+        }
+        input{
+            border: 0;
+            border: solid;
+            border-width: 1px;
+            border-radius: 5px;
+            padding-left: 5px;
+            text-align: center;
+        }
+    
+    }
+
+}
+#side-bar{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    height: 100%;
+    width: 180px;
+    background-color: rgb(53, 53, 65);
+    animation-name: side-slide-out;
+    animation-duration: 3s; 
+
+    a{
+        position: relative;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.774);
+        animation: side-fade-in;
+        animation-duration: 5s;
+    }
+    h3{
+        text-align: center;
+        color: rgba(255, 255, 255, 0.774);
+    }
+    i{
+        color: white;
+        float: left;
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+    .side-btn{
+        position: static;
+    
+        padding-top: 20px;
+        padding-bottom: 20px;
+    
+        border-top:solid;
+        border-top-width: 2px;
+        border-top-color: rgb(34, 34, 44); 
+    }
+    .side-btn:hover{
+        cursor: pointer;
+        background-color: rgb(56, 56, 73);
+    }
+    .side-sub-btn{
+        @extend .side-btn;
+        padding-left: 30px;
+        display: none;
+    }
+
+    @keyframes side-slide-out{
+        from{width: 103px;}
+        to{width:180px;}
+    }
+    @keyframes side-slide-in{
+        from{width:180px;}
+        to{width:80px;}
+    }
+    @keyframes side-fade-in{
+        from{opacity: 0;
+            display: none}
+        to{opacity:1;
+        display: block;}
+    }
+    
+
+}
+
+
+
+
+.btn-reg{
+    margin-top: 1px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border:0;
+    background: none;
+    color: black;
+    background-color: gray;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 6px;
+}
