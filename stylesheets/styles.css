@@ -105,7 +105,7 @@
 }
 
 #side-bar a {
-  position: relative;
+  position: absolute;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.774);
   -webkit-animation: side-fade-in;
@@ -129,7 +129,7 @@
 #side-bar .side-btn, #side-bar .side-btn-bottom, #side-bar .side-sub-btn {
   position: static;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 36px;
   border-top: solid;
   border-top-width: 2px;
   border-top-color: #22222c;
@@ -148,6 +148,10 @@
 
 #side-bar .side-sub-btn {
   padding-left: 30px;
+  -webkit-animation-name: side-slide-down;
+          animation-name: side-slide-down;
+  -webkit-animation-direction: 2s;
+          animation-direction: 2s;
 }
 
 @-webkit-keyframes side-slide-out {
@@ -208,6 +212,30 @@
   }
 }
 
+@-webkit-keyframes side-slide-down {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes side-slide-down {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+#content {
+  margin-left: 180px;
+  margin-top: 50px;
+}
+
+/* Base Classes */
 .hidden {
   display: none;
 }

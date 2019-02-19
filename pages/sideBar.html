@@ -1,43 +1,28 @@
-<div id="side-nav" class="wrapper">
-    <!-- SideBar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
+<div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
             <h3>Navigation</h3>
-        </div>
-
-        <ul class="list-unstyled-components">
-            <li>
-                <a id="homeSubMenu-a" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar-drop-btn dropdown-toggle">
-                        <i class="fas fa-home side-nav-icon"></i><span class="sidebar-text">Home</span></a>
-                <ul class="collapse list-unstyled " id="homeSubMenu-ul">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a id="projectSubMenu-a" href="#projectSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar-drop-btn dropdown-toggle">
-                    <i class="fas fa-folder-open side-nav-icon"></i><span class="sidebar-text">Projects</span></a>
-                <ul class="collapse list-unstyled" id="projectSubMenu-ul">
-                    <li>    
-                        <a id="tips-tracker-btn" href="#">Tips tracker</a>
-                    </li>
-                    <li>    
-                    <li>
-                        <a id="maps-btn" href="#">Maps</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a id="about-btn" class="sidebar-btn" href="#">
-                    <i class="fas fa-question side-nav-icon"></i><span class="sidebar-text">About</span></a>
-            </li>
-        </ul>
-    </nav>
-</div>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-tips" class="side-sub-btn hidden">
+                    <i class="fas fa-dollar-sign side-nav-icon"></i>
+                    <a href="#">Tip Tracker</a>
+                </div>
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div>

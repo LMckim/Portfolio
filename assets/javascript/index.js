@@ -18,7 +18,7 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     // sign-in and register dropdowns
     controlDropdown('.dropdown-btn');
-    
+    controlSidebar();    
     //-----------------------------------------------------------------------
     //                      ::SIDEBAR HANDLER::
     //-----------------------------------------------------------------------
@@ -37,12 +37,12 @@ $(document).ready(function()
     });
    
     // grabs projects
-    $('#tips-tracker-btn').on('click',function(){
+    $('#projects-tips').on('click',function(){
         getContentPost('tips-tracker',function(data){
             $('#content').html(data);
         });
     });
-    $('#maps-btn').on('click',function(){
+    $('#projects-maps').on('click',function(){
         // if the scripts already loaded dont load it again
         if(loadedScripts.includes('googlemaps')){
             getContentPost('maps',function(data){
@@ -66,7 +66,7 @@ $(document).ready(function()
  
     // gotta work here
     
-    $('#about-btn').on('click',function(){
+    $('#side-about').on('click',function(){
         getContentPost('about',function(data){
             $('#content').html(data);
         });
@@ -243,29 +243,54 @@ function initMap(){
         zoom: 8
     });
 }
+function controlSidebar(){
+    $('#nav-btn').on('click',function(){
+        if($('#side-nav').hasClass('open')){
+            closeSidebar();
+        }else{
+            openSidebar();
+        }
+    });
+}
+function openSidebar(){
+    $('#side-nav').removeClass('closed')
+    $('#side-nav').addClass('open');
+
+    $('#side-nav').find('h3').css('display','block');
+    $('#side-nav').find('a').css('display','');
+    $('#side-bar').css('width','180px');
+}
+function closeSidebar(){
+    $('#side-nav').removeClass('open')
+    $('#side-nav').addClass('closed');
+
+    $('#projects').find('div').each(function(){
+        if($(this).hasClass('show')){
+            $(this).removeClass('show');
+            $(this).addClass('hidden');
+        }
+    });
+    $('#side-nav').find('h3').css('display','none');
+    $('#side-nav').find('a').css('display','none');
+    $('#side-bar').css('width','50px');
+}
 function toggleShowChildren(element){
     let childID = '#' + $(element).data('toggle');
 
     $(childID).find('div').each(function(){
-        console.log(this);
         if($(this).hasClass('hidden')){
+            if($('#side-nav').hasClass('closed')){
+                openSidebar();
+            }
             $(this).removeClass('hidden');
             $(this).addClass('show');
+            
         }else if($(this).hasClass('show')){
             $(this).removeClass('show');
             $(this).addClass('hidden');
         }
     });
 }
-
-
-
-
-
-
-
-
-// probably deprecated
 function controlDropdown(obj){
     $(obj).on('click',function(event){
         // retrieve clicked elements id
