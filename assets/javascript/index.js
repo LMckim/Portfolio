@@ -31,55 +31,11 @@ $(document).ready(function()
         }
         contentSizeCheck();
     });
-    /
-    $("#sidebarToggle").on('click',function()
-    {
-        // if sidebar is active (closed) then open it up
-        if($('#sidebar').hasClass('active'))
-        {
-            $('#sidebar').removeClass('active');    
-            // shuffle content over when bar is opened
-            contentSizeCheck();       
-        // otherwise close it and all sub menus
-        }else{
-            $('#sidebar').addClass('active');
-            // home dropdown
-            $('#homeSubMenu-a').addClass('collapsed');
-            $('#homeSubMenu-a').attr('aria-expanded','false'); 
-            $('#homeSubMenu-ul').removeClass('show');
-            // projects dropdown
-            $('#projectSubMenu-a').addClass('collapsed');
-            $('#projectSubMenu-a').attr('aria-expanded','false'); 
-            $('#projectSubMenu-ul').removeClass('show');
-            // shuffle content back when bar is closed
-            contentSizeCheck();
-        }
+    $('#side-projects').on('click',function(){
+        toggleShowChildren('#side-projects');
+
     });
-    // handles sub menus
-    $('#homeSubMenu-a').on('click',function(){
-        if($('#homeSubMenu-a').hasClass('collapsed')){
-            $('#homeSubMenu-a').removeClass('collapsed');
-            $('#homeSubMenu-a').attr('aria-expanded','true'); 
-            $('#homeSubMenu-ul').addClass('show') 
-        }else{
-            $('#homeSubMenu-a').addClass('collapsed');
-            $('#homeSubMenu-a').attr('aria-expanded','false'); 
-            $('#homeSubMenu-ul').removeClass('show')
-        }
-        contentSizeCheck();
-    });
-    $('#projectSubMenu-a').on('click',function(){
-        if($('#projectSubMenu-a').hasClass('collapsed')){
-            $('#projectSubMenu-a').removeClass('collapsed');
-            $('#projectSubMenu-a').attr('aria-expanded','true'); 
-            $('#projectSubMenu-ul').addClass('show') 
-        }else{
-            $('#projectSubMenu-a').addClass('collapsed');
-            $('#projectSubMenu-a').attr('aria-expanded','false'); 
-            $('#projectSubMenu-ul').removeClass('show')
-        }
-        contentSizeCheck();
-    });
+   
     // grabs projects
     $('#tips-tracker-btn').on('click',function(){
         getContentPost('tips-tracker',function(data){
@@ -287,6 +243,29 @@ function initMap(){
         zoom: 8
     });
 }
+function toggleShowChildren(element){
+    let childID = '#' + $(element).data('toggle');
+
+    $(childID).find('div').each(function(){
+        console.log(this);
+        if($(this).hasClass('hidden')){
+            $(this).removeClass('hidden');
+            $(this).addClass('show');
+        }else if($(this).hasClass('show')){
+            $(this).removeClass('show');
+            $(this).addClass('hidden');
+        }
+    });
+}
+
+
+
+
+
+
+
+
+// probably deprecated
 function controlDropdown(obj){
     $(obj).on('click',function(event){
         // retrieve clicked elements id

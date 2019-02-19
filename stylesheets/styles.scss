@@ -129,6 +129,13 @@
         border-top-width: 2px;
         border-top-color: rgb(34, 34, 44); 
     }
+    .side-btn-bottom{
+        @extend .side-btn;
+
+        border-bottom:solid;
+        border-bottom-width: 2px;
+        border-bottom-color: rgb(34, 34, 44); 
+    }
     .side-btn:hover{
         cursor: pointer;
         background-color: rgb(56, 56, 73);
@@ -136,7 +143,6 @@
     .side-sub-btn{
         @extend .side-btn;
         padding-left: 30px;
-        display: none;
     }
 
     @keyframes side-slide-out{
@@ -157,6 +163,12 @@
 
 }
 
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
 
 
 
