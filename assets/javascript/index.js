@@ -5,7 +5,7 @@ $(document).ready(function()
     getContentPost('landing',function(data){
         $('#content').html(data);
     });
-    $('#nav-title').on('click',function(){
+    $('#nav-brand-text').on('click',function(){
         getContentPost('landing',function(data){
             $('#content').html(data);
         });
@@ -22,15 +22,15 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     //                      ::SIDEBAR HANDLER::
     //-----------------------------------------------------------------------
-    $('#sidebar').toggleClass('active'); // close on load
 
-    // closes everything when sidebar is shrunk
-    $(".sidebar-drop-btn").on('click',function(){
-        if($('#sidebar').hasClass('active')){
-            $('#sidebar').toggleClass('active');
-        }
-        contentSizeCheck();
+    // home button
+    $('#side-home').on('click',function(){
+        getContentPost('landing',function(data){
+            $('#content').html(data);
+        });
     });
+    
+    // handles opening dropdown bar for projects
     $('#side-projects').on('click',function(){
         toggleShowChildren('#side-projects');
 
@@ -63,8 +63,11 @@ $(document).ready(function()
         }
 
     });
- 
-    // gotta work here
+    $('#projects-apis').on('click',function(){
+        getContentPost('apis',function(data){
+            $('#content').html(data);
+        });
+    });
     
     $('#side-about').on('click',function(){
         getContentPost('about',function(data){
@@ -189,13 +192,6 @@ $(document).ready(function()
     //-----------------------------------------------------------------------
     //                      ::CONTENT HANDLER::
     //-----------------------------------------------------------------------
-    var map;
-    function initMap(){
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.387, lng: 150.644},
-            zoom: 8
-        });
-    }
 });
 
 // custom functions
@@ -227,28 +223,32 @@ function getScriptPost(script,func,sync = true){
     });
 }
 function contentSizeCheck(){
-    if($('#sidebar').css('display') == 'none')
+    if($('#side-nav').css('display') == 'none')
     {
         $('#content').css('margin-left','0px');
-    }else if($('#sidebar').hasClass('active')){
-        $('#content').css('margin-left','80px');
+    }else if($('#side-nav').hasClass('closed')){
+        $('#content').css('margin-left','50px');
     }else{
-        $('#content').css('margin-left','250px');
+        $('#content').css('margin-left','180px');
     }
 }
 function initMap(){
-    // var latlng = new google.maps.LatLng(43.6532,79.3832);
-    map = new google.maps.Map(document.getElementById('map'),{
-        center: {lat: 43.6532 , lng: 79.3832},
+    var latlng = new google.maps.LatLng(43.6532,-79.3832);
+
+    var map = new google.maps.Map(document.getElementById('map'),{
+        center: latlng,
         zoom: 8
     });
 }
+
 function controlSidebar(){
     $('#nav-btn').on('click',function(){
         if($('#side-nav').hasClass('open')){
             closeSidebar();
+            contentSizeCheck();
         }else{
             openSidebar();
+            contentSizeCheck();
         }
     });
 }
@@ -281,6 +281,7 @@ function toggleShowChildren(element){
         if($(this).hasClass('hidden')){
             if($('#side-nav').hasClass('closed')){
                 openSidebar();
+                contentSizeCheck();
             }
             $(this).removeClass('hidden');
             $(this).addClass('show');

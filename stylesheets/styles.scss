@@ -1,4 +1,18 @@
-/* Nav Bar */
+@media (max-width:480px){
+    #nav-bar{
+        #nav-brand-text{
+            display: none;
+        }
+    }
+    #side-bar{
+        display: none;
+    }
+    #content{
+        margin-left: 0px;
+    }
+}
+
+
 #nav-bar{
     position: fixed;
     top: 0;
@@ -52,6 +66,8 @@
      .dropdown-menu{
         position: fixed;
         right: 0;
+
+        z-index: 999;
     
         padding-right: 20px;
     
@@ -169,6 +185,14 @@
 #content{
     margin-left: 180px;
     margin-top: 50px;
+
+    .content-text{
+        text-align: center;
+    }
+
+    #map{
+        height: 475px;
+    }
 }
 
 /* Base Classes */
