@@ -10,5 +10,16 @@
         <input name="datetime" type="datetime">
         <button type="submit">Submit</button>
     </form>
-    <a href="/api/whoami/index.php" target="_blank">Who Am I</a>
+    <a href="/api/whoami/index.php" target="_blank">Who Am I API</a>
+    <br>
+    <span>Url Shortener</span>
+    <form id="original_url-form" action="/api/shorturl/" method="GET" target="_blank">
+        <input name="original_url" type="url" placeholder="original URL">
+        <button type="submit">Submit</button>
+    </form>
+    <form id="short_url-form" action="/api/shorturl/" method="GET" target="_blank">
+        <input name="short_url" type="number" placeholder="Shortened URL">
+        <button type="submit">Submit</button>
+    </form>
+
 </div>
