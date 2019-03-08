@@ -4,6 +4,7 @@ $(document).ready(function()
     // intial filling of content and return to home
     getContentPost('landing',function(data){
         $('#content').html(data);
+        contentSizeCheck();
     });
     $('#nav-brand-text').on('click',function(){
         getContentPost('landing',function(data){
@@ -223,7 +224,7 @@ function getScriptPost(script,func,sync = true){
     });
 }
 function contentSizeCheck(){
-    if($('#side-nav').css('display') == 'none')
+    if($('#side-bar').css('display') == 'none')
     {
         $('#content').css('margin-left','0px');
     }else if($('#side-nav').hasClass('closed')){
@@ -244,11 +245,24 @@ function initMap(){
 function controlSidebar(){
     $('#nav-btn').on('click',function(){
         if($('#side-nav').hasClass('open')){
-            closeSidebar();
-            contentSizeCheck();
+            if($(window).width() <= 480)
+            {
+                $('#side-bar').css('display','none');
+                closeSidebar();
+            }else{
+                closeSidebar();
+                contentSizeCheck();
+            }
+        
         }else{
-            openSidebar();
-            contentSizeCheck();
+            if($('#side-bar').css('display') == 'none')
+            {
+                $('#side-bar').css('display','block');
+                openSidebar();
+            }else{
+                openSidebar();
+                contentSizeCheck();
+            }
         }
     });
 }

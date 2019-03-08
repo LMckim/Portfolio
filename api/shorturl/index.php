@@ -6,7 +6,7 @@ if($conn->connect_errno)
     print("Could not connect to server");
 }
 
-if(isset($_GET['original_url']))
+if(isset($_GET['original_url']) && $_GET['original_url'] != "")
 {
     $query = "SELECT MAX(short_url) FROM `shorturl`";
     $result = $conn->query($query);
@@ -24,7 +24,7 @@ if(isset($_GET['original_url']))
     print(json_encode($r_arr));
     exit();
 
-}else if(isset($_GET['short_url']))
+}else if(isset($_GET['short_url']) && $_GET['short_url'] != "")
 {
     $s_url = $_GET['short_url'];
     $query = "SELECT `original_url` FROM `shorturl` WHERE `short_url`='$s_url'";

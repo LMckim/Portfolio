@@ -186,12 +186,24 @@
     margin-left: 180px;
     margin-top: 50px;
 
+    h3{
+        margin-top: 25%;
+    }
     .content-text{
         text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     #map{
         height: 475px;
+    }
+
+    #about-img{
+        position: relative;
+        left: 25%;
+        width: 50%;
+        margin-top: 20px;
     }
 }
 

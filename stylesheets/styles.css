@@ -247,12 +247,25 @@
   margin-top: 50px;
 }
 
+#content h3 {
+  margin-top: 25%;
+}
+
 #content .content-text {
   text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #content #map {
   height: 475px;
+}
+
+#content #about-img {
+  position: relative;
+  left: 25%;
+  width: 50%;
+  margin-top: 20px;
 }
 
 /* Base Classes */
