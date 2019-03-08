@@ -321,10 +321,10 @@
   border: 0;
   background: none;
   color: black;
-  background-color: gray;
+  background-color: #6f71d4;
   border: solid;
   border-width: 2px;
-  border-color: white;
+  border-color: #4d4fc5;
   border-radius: 6px;
 }
 

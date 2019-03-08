@@ -2,27 +2,26 @@
     <div class="content-text">
         <div class="content-title">
             <h3>Free Code Camp's APIs</h3>
-            <p>This section implements all of free code camps API
-                projects that they require for their certification
-            </p>
         </div>
+        <p>This section implements all of free code camps API
+            projects that they require for their certification
+        </p>
+        <br>
+        <form id="timestamp-form" action="/api/timestamp/" method="GET" target="_blank">
+            <span>Timestamp API</span>
+            <input name="datetime" type="datetime">
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/api/whoami/index.php" target="_blank">Who Am I API</a>
+        <br>
+        <span>Url Shortener</span>
+        <form id="original_url-form" action="/api/shorturl/" method="GET" target="_blank">
+            <input name="original_url" type="url" placeholder="original URL">
+            <button type="submit">Submit</button>
+        </form>
+        <form id="short_url-form" action="/api/shorturl/" method="GET" target="_blank">
+            <input name="short_url" type="number" placeholder="Shortened URL">
+            <button type="submit">Submit</button>
+        </form>
     </div>
-    <br>
-    <form id="timestamp-form" action="/api/timestamp/" method="GET" target="_blank">
-        <span>Timestamp API</span>
-        <input name="datetime" type="datetime">
-        <button type="submit">Submit</button>
-    </form>
-    <a href="/api/whoami/index.php" target="_blank">Who Am I API</a>
-    <br>
-    <span>Url Shortener</span>
-    <form id="original_url-form" action="/api/shorturl/" method="GET" target="_blank">
-        <input name="original_url" type="url" placeholder="original URL">
-        <button type="submit">Submit</button>
-    </form>
-    <form id="short_url-form" action="/api/shorturl/" method="GET" target="_blank">
-        <input name="short_url" type="number" placeholder="Shortened URL">
-        <button type="submit">Submit</button>
-    </form>
-
 </div>
