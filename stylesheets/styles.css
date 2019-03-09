@@ -1,4 +1,5 @@
 #nav-bar {
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -92,6 +93,7 @@
 }
 
 #side-bar {
+  z-index: 2;
   position: fixed;
   top: 50px;
   left: 0;
@@ -234,7 +236,7 @@
   margin-left: 180px;
   margin-top: 85px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 
 #content h3 {
@@ -259,7 +261,7 @@
   background-image: -webkit-gradient(linear, right bottom, left top, from(#6f71d4), to(#494aac));
   background-image: linear-gradient(to top left, #6f71d4, #494aac);
   width: 100%;
-  margin-top: -35px;
+  margin-top: -36px;
   -webkit-box-shadow: 0px 2px 5px #4d4fc5;
           box-shadow: 0px 2px 5px #4d4fc5;
   -webkit-animation-name: content-slide-out;
@@ -270,6 +272,12 @@
 
 #content .content-text {
   text-align: center;
+}
+
+#content .link-img {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
 }
 
 #content #map {

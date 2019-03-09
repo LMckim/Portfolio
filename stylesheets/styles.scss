@@ -1,4 +1,8 @@
+$primary-med: rgb(111, 113, 212);
+$primary-dark:
+
 #nav-bar{
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
@@ -94,6 +98,7 @@
 
 }
 #side-bar{
+    z-index: 2;
     position: fixed;
     top: 50px;
     left: 0;
@@ -171,7 +176,7 @@
     margin-left: 180px;
     margin-top: 85px;
     position: relative;
-    z-index: -1;
+    z-index: 1;
 
     h3{
         font-size: 64pt;
@@ -191,14 +196,19 @@
         background-color: rgb(111, 113, 212);
         background-image: linear-gradient(to top left, rgb(111, 113, 212) ,rgb(73, 74, 172));
         width: 100%;
-        margin-top: -35px;
-        box-shadow: 0px 2px 5px rgb(77, 79, 197);
+        margin-top: -36px;
+        box-shadow:$primary-dark;
         animation-name: content-slide-out;
         animation-duration: 3s; 
     }
     .content-text{
         text-align: center;
     } 
+    .link-img{
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
 
     #map{
         height: 475px;
