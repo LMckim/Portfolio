@@ -37,12 +37,6 @@ $(document).ready(function()
 
     });
    
-    // grabs projects
-    $('#projects-tips').on('click',function(){
-        getContentPost('tips-tracker',function(data){
-            $('#content').html(data);
-        });
-    });
     $('#projects-maps').on('click',function(){
         // if the scripts already loaded dont load it again
         if(loadedScripts.includes('googlemaps')){
@@ -264,6 +258,30 @@ function controlSidebar(){
                 contentSizeCheck();
             }
         }
+    });
+    $('.side-btn').on('click',function(){
+        if($('#side-nav').hasClass('open')){
+            if($(window).width() <= 480)
+            {
+                $('#side-bar').css('display','none');
+                closeSidebar();
+            }else{
+                closeSidebar();
+                contentSizeCheck();
+            }
+        
+        }else{
+            if($('#side-bar').css('display') == 'none')
+            {
+                $('#side-bar').css('display','block');
+                openSidebar();
+            }else{
+                openSidebar();
+                contentSizeCheck();
+            }
+        }
+        
+
     });
 }
 function openSidebar(){

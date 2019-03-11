@@ -262,8 +262,8 @@
   background-image: linear-gradient(to top left, #6f71d4, #494aac);
   width: 100%;
   margin-top: -36px;
-  -webkit-box-shadow: 0px 2px 5px #4d4fc5;
-          box-shadow: 0px 2px 5px #4d4fc5;
+  -webkit-box-shadow: #494aac;
+          box-shadow: #494aac;
   -webkit-animation-name: content-slide-out;
           animation-name: content-slide-out;
   -webkit-animation-duration: 3s;
