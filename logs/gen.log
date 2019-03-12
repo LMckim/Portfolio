@@ -1,0 +1,708 @@
+[2019-03-12 05:34:43] <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My online portfolio">
+    <meta name="author" content="Lucas Mckim">
+
+    <title>Lukes Portfolio</title>
+    <!-- Sourced Stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/fonts/fontawesome-free/css/all.min.css"> 
+    <!-- Custom stylesheets-->
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body><nav id="nav-bar">
+    <div id="nav-left">
+        <button id="nav-btn">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a id="nav-brand" href="#">
+            <span id="nav-brand-text">
+                Luke's Portfolio
+            </span>
+            <img id="nav-img" src="../images/book.png">
+        </a>
+    </div>
+    <div id="nav-right">
+        <div id="Account-Options"><!-- Signed Out -->
+<button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
+    Sign In
+</button>
+<div id="signin-dropdown" class="dropdown-menu">
+    Sign In
+    <form id="sign-in">
+        <div class="form-input">
+                <label for="userName">User Name : </label>
+                <input id="sign-in-uname" type="text" placeholder="User Name">
+            </div>
+            <div class="form-input">
+                <label for="password">Password : </label>
+                <input id="sign-in-pass" type="password" placeholder="Password">
+            </div>
+            <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+    </form>
+</div>
+<button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
+    Register
+</button>
+<div id="register-dropdown" class="dropdown-menu">
+    Register
+    <form id="register">
+        <div class="form-input">
+            <label for="userName">User Name :</label>
+            <input id="reg-uname" type="text" placeholder="Username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input id="reg-pass" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="password">Confirm Password</label>
+            <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input id="reg-email" type="email" placeholder="Email">
+        </div>
+        <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+    </form>
+</div>
+            <!-- Dynamically Filled -->
+        </div>
+    </div>
+</nav><div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+                <div id="projects-apis" class="side-sub-btn hidden">
+                    <i class="fas fa-link side-nav-icon"></i>
+                    <a href="#">APIs</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div><!-- Content goes here  -->
+<div id="content">
+
+
+</div>
+<!-- Content ends  --><!--    Scripts    -->
+<script src="../external/jQuery/jquery-3.3.1.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="../assets/javascript/index.js"></script>
+
+<!-- External Scripts -->
+
+
+</body>
+</html>
+[2019-03-12 05:35:14] <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My online portfolio">
+    <meta name="author" content="Lucas Mckim">
+
+    <title>Lukes Portfolio</title>
+    <!-- Sourced Stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/fonts/fontawesome-free/css/all.min.css"> 
+    <!-- Custom stylesheets-->
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body><nav id="nav-bar">
+    <div id="nav-left">
+        <button id="nav-btn">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a id="nav-brand" href="#">
+            <span id="nav-brand-text">
+                Luke's Portfolio
+            </span>
+            <img id="nav-img" src="../images/book.png">
+        </a>
+    </div>
+    <div id="nav-right">
+        <div id="Account-Options"><!-- Signed Out -->
+<button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
+    Sign In
+</button>
+<div id="signin-dropdown" class="dropdown-menu">
+    Sign In
+    <form id="sign-in">
+        <div class="form-input">
+                <label for="userName">User Name : </label>
+                <input id="sign-in-uname" type="text" placeholder="User Name">
+            </div>
+            <div class="form-input">
+                <label for="password">Password : </label>
+                <input id="sign-in-pass" type="password" placeholder="Password">
+            </div>
+            <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+    </form>
+</div>
+<button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
+    Register
+</button>
+<div id="register-dropdown" class="dropdown-menu">
+    Register
+    <form id="register">
+        <div class="form-input">
+            <label for="userName">User Name :</label>
+            <input id="reg-uname" type="text" placeholder="Username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input id="reg-pass" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="password">Confirm Password</label>
+            <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input id="reg-email" type="email" placeholder="Email">
+        </div>
+        <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+    </form>
+</div>
+            <!-- Dynamically Filled -->
+        </div>
+    </div>
+</nav><div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+                <div id="projects-apis" class="side-sub-btn hidden">
+                    <i class="fas fa-link side-nav-icon"></i>
+                    <a href="#">APIs</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div><!-- Content goes here  -->
+<div id="content">
+
+
+</div>
+<!-- Content ends  --><!--    Scripts    -->
+<script src="../external/jQuery/jquery-3.3.1.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="../assets/javascript/index.js"></script>
+
+<!-- External Scripts -->
+
+
+</body>
+</html>
+[2019-03-12 05:36:08] <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My online portfolio">
+    <meta name="author" content="Lucas Mckim">
+
+    <title>Lukes Portfolio</title>
+    <!-- Sourced Stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/fonts/fontawesome-free/css/all.min.css"> 
+    <!-- Custom stylesheets-->
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body><nav id="nav-bar">
+    <div id="nav-left">
+        <button id="nav-btn">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a id="nav-brand" href="#">
+            <span id="nav-brand-text">
+                Luke's Portfolio
+            </span>
+            <img id="nav-img" src="../images/book.png">
+        </a>
+    </div>
+    <div id="nav-right">
+        <div id="Account-Options"><!-- Signed Out -->
+<button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
+    Sign In
+</button>
+<div id="signin-dropdown" class="dropdown-menu">
+    Sign In
+    <form id="sign-in">
+        <div class="form-input">
+                <label for="userName">User Name : </label>
+                <input id="sign-in-uname" type="text" placeholder="User Name">
+            </div>
+            <div class="form-input">
+                <label for="password">Password : </label>
+                <input id="sign-in-pass" type="password" placeholder="Password">
+            </div>
+            <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+    </form>
+</div>
+<button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
+    Register
+</button>
+<div id="register-dropdown" class="dropdown-menu">
+    Register
+    <form id="register">
+        <div class="form-input">
+            <label for="userName">User Name :</label>
+            <input id="reg-uname" type="text" placeholder="Username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input id="reg-pass" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="password">Confirm Password</label>
+            <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input id="reg-email" type="email" placeholder="Email">
+        </div>
+        <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+    </form>
+</div>
+            <!-- Dynamically Filled -->
+        </div>
+    </div>
+</nav><div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+                <div id="projects-apis" class="side-sub-btn hidden">
+                    <i class="fas fa-link side-nav-icon"></i>
+                    <a href="#">APIs</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div><!-- Content goes here  -->
+<div id="content">
+
+
+</div>
+<!-- Content ends  --><!--    Scripts    -->
+<script src="../external/jQuery/jquery-3.3.1.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="../assets/javascript/index.js"></script>
+
+<!-- External Scripts -->
+
+
+</body>
+</html>
+[2019-03-12 05:36:18] <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My online portfolio">
+    <meta name="author" content="Lucas Mckim">
+
+    <title>Lukes Portfolio</title>
+    <!-- Sourced Stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/fonts/fontawesome-free/css/all.min.css"> 
+    <!-- Custom stylesheets-->
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body><nav id="nav-bar">
+    <div id="nav-left">
+        <button id="nav-btn">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a id="nav-brand" href="#">
+            <span id="nav-brand-text">
+                Luke's Portfolio
+            </span>
+            <img id="nav-img" src="../images/book.png">
+        </a>
+    </div>
+    <div id="nav-right">
+        <div id="Account-Options"><!-- Signed Out -->
+<button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
+    Sign In
+</button>
+<div id="signin-dropdown" class="dropdown-menu">
+    Sign In
+    <form id="sign-in">
+        <div class="form-input">
+                <label for="userName">User Name : </label>
+                <input id="sign-in-uname" type="text" placeholder="User Name">
+            </div>
+            <div class="form-input">
+                <label for="password">Password : </label>
+                <input id="sign-in-pass" type="password" placeholder="Password">
+            </div>
+            <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+    </form>
+</div>
+<button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
+    Register
+</button>
+<div id="register-dropdown" class="dropdown-menu">
+    Register
+    <form id="register">
+        <div class="form-input">
+            <label for="userName">User Name :</label>
+            <input id="reg-uname" type="text" placeholder="Username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input id="reg-pass" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="password">Confirm Password</label>
+            <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input id="reg-email" type="email" placeholder="Email">
+        </div>
+        <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+    </form>
+</div>
+            <!-- Dynamically Filled -->
+        </div>
+    </div>
+</nav><div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+                <div id="projects-apis" class="side-sub-btn hidden">
+                    <i class="fas fa-link side-nav-icon"></i>
+                    <a href="#">APIs</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div><!-- Content goes here  -->
+<div id="content">
+
+
+</div>
+<!-- Content ends  --><!--    Scripts    -->
+<script src="../external/jQuery/jquery-3.3.1.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="../assets/javascript/index.js"></script>
+
+<!-- External Scripts -->
+
+
+</body>
+</html>
+[2019-03-12 05:36:41] <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My online portfolio">
+    <meta name="author" content="Lucas Mckim">
+
+    <title>Lukes Portfolio</title>
+    <!-- Sourced Stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/fonts/fontawesome-free/css/all.min.css"> 
+    <!-- Custom stylesheets-->
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body><nav id="nav-bar">
+    <div id="nav-left">
+        <button id="nav-btn">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a id="nav-brand" href="#">
+            <span id="nav-brand-text">
+                Luke's Portfolio
+            </span>
+            <img id="nav-img" src="../images/book.png">
+        </a>
+    </div>
+    <div id="nav-right">
+        <div id="Account-Options"><!-- Signed Out -->
+<button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
+    Sign In
+</button>
+<div id="signin-dropdown" class="dropdown-menu">
+    Sign In
+    <form id="sign-in">
+        <div class="form-input">
+                <label for="userName">User Name : </label>
+                <input id="sign-in-uname" type="text" placeholder="User Name">
+            </div>
+            <div class="form-input">
+                <label for="password">Password : </label>
+                <input id="sign-in-pass" type="password" placeholder="Password">
+            </div>
+            <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+    </form>
+</div>
+<button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
+    Register
+</button>
+<div id="register-dropdown" class="dropdown-menu">
+    Register
+    <form id="register">
+        <div class="form-input">
+            <label for="userName">User Name :</label>
+            <input id="reg-uname" type="text" placeholder="Username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input id="reg-pass" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="password">Confirm Password</label>
+            <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input id="reg-email" type="email" placeholder="Email">
+        </div>
+        <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+    </form>
+</div>
+            <!-- Dynamically Filled -->
+        </div>
+    </div>
+</nav><div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+                <div id="projects-apis" class="side-sub-btn hidden">
+                    <i class="fas fa-link side-nav-icon"></i>
+                    <a href="#">APIs</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div><!-- Content goes here  -->
+<div id="content">
+
+
+</div>
+<!-- Content ends  --><!--    Scripts    -->
+<script src="../external/jQuery/jquery-3.3.1.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="../assets/javascript/index.js"></script>
+
+<!-- External Scripts -->
+
+
+</body>
+</html>
+[2019-03-12 05:37:04] <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My online portfolio">
+    <meta name="author" content="Lucas Mckim">
+
+    <title>Lukes Portfolio</title>
+    <!-- Sourced Stylesheets -->
+    <link rel="stylesheet" href="../stylesheets/fonts/fontawesome-free/css/all.min.css"> 
+    <!-- Custom stylesheets-->
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body><nav id="nav-bar">
+    <div id="nav-left">
+        <button id="nav-btn">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+        <a id="nav-brand" href="#">
+            <span id="nav-brand-text">
+                Luke's Portfolio
+            </span>
+            <img id="nav-img" src="../images/book.png">
+        </a>
+    </div>
+    <div id="nav-right">
+        <div id="Account-Options"><!-- Signed Out -->
+<button id="signin-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="signin-dropdown" data-group="user-options">
+    Sign In
+</button>
+<div id="signin-dropdown" class="dropdown-menu">
+    Sign In
+    <form id="sign-in">
+        <div class="form-input">
+                <label for="userName">User Name : </label>
+                <input id="sign-in-uname" type="text" placeholder="User Name">
+            </div>
+            <div class="form-input">
+                <label for="password">Password : </label>
+                <input id="sign-in-pass" type="password" placeholder="Password">
+            </div>
+            <button id="sign-in-submit" type="button" name="submit" class="btn-reg">Sign In</button>
+    </form>
+</div>
+<button id="register-dropdown-btn" class="dropdown-btn btn-reg" data-toggle="register-dropdown" data-group="user-options">
+    Register
+</button>
+<div id="register-dropdown" class="dropdown-menu">
+    Register
+    <form id="register">
+        <div class="form-input">
+            <label for="userName">User Name :</label>
+            <input id="reg-uname" type="text" placeholder="Username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input id="reg-pass" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="password">Confirm Password</label>
+            <input id="reg-pass-c" type="password" placeholder="Confirm Password">
+        </div>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input id="reg-email" type="email" placeholder="Email">
+        </div>
+        <button id="reg-submit" type="button" name="submit" class="btn-reg">Submit</button>
+    </form>
+</div>
+            <!-- Dynamically Filled -->
+        </div>
+    </div>
+</nav><div id="side-nav" class="open">
+        <!-- SideBar -->
+        <nav id="side-bar">
+            <h3>Navigation</h3>
+            <div id="side-home" class="side-btn">
+                <i class="fas fa-home side-nav-icon"></i>
+                <a href="#">Home</a>
+            </div>
+            <div id="side-projects" class="side-btn" data-toggle="projects">
+                <i class="fas fa-folder-open side-nav-icon"></i>
+                <a href="#">Projects</a>
+            </div>
+            <div id="projects">
+                <div id="projects-maps" class="side-sub-btn hidden">
+                    <i class="fas fa-map-marker-alt side-nav-icon"></i>
+                    <a href="#">Google Maps</a>
+                </div>
+                <div id="projects-apis" class="side-sub-btn hidden">
+                    <i class="fas fa-link side-nav-icon"></i>
+                    <a href="#">APIs</a>
+                </div>
+            </div>
+            <div id="side-about" class="side-btn-bottom">
+                <i class="fas fa-question side-nav-icon"></i>
+                <a href="#">About Me</a>
+            </div>
+        </nav>
+    </div><!-- Content goes here  -->
+<div id="content">
+
+
+</div>
+<!-- Content ends  --><!--    Scripts    -->
+<script src="../external/jQuery/jquery-3.3.1.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="../assets/javascript/index.js"></script>
+
+<!-- External Scripts -->
+
+
+</body>
+</html>
